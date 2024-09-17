@@ -1,6 +1,6 @@
-BeardenH.SYS3501L1
+#Henry Bearden zuf3ys SYS 3501 Lab 1
 
-setwd("~/Desktop/SYSProg/Data/TrainData/")
+setwd("~/Desktop/SYS Prog/Data/TrainData/")
 
 Accidents2020<-read.csv("RailAccidents20.csv")
 nrow(Accidents2020)
