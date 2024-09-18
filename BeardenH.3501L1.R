@@ -1,4 +1,6 @@
-setwd("~/Desktop/SYSProg/Data/TrainData/")
+#Henry Bearden zuf3ys Lab 1
+
+setwd("~/Desktop/SYS3501/Data/TrainData/")
 
 Accidents2020<-read.csv("RailAccidents20.csv")
 nrow(Accidents2020)
@@ -14,4 +16,4 @@ max(Accidents2020$CASKLD)
 max(Accidents2020$CASINJ)
 max=(Accidents2020$ACCDMG)
 median(Accidents2020$CASINJ)
-sum(Accidents2020$ACCDMG[Accidents2020$CASKLD > 0 | Accidents2020$CASINJ > 0])
+sum(Accidents2020$ACCDMG[Accidents2020$TOTKLD >= 1 | Accidents2020$TOTINJ >= 1])
