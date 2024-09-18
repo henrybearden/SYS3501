@@ -6,15 +6,15 @@
 #------------------------------------------------------#
 #----------------------- Task 1 -----------------------#
 #------------------------------------------------------#
-#PROMPT: Generate code to set the working directory to "~/Desktop/SYS Prog" 
-#and set up my data folder called "~/Desktop/SYS Prog/Data/TrainData"
+#PROMPT: Generate code to set the working directory to "~/Desktop/SYS3501" 
+#and set up my data folder called "~/Desktop/SYS3501/Data/TrainData"
 
 # CODE
 # Set the working directory
-setwd("~/Desktop/SYS Prog")
+setwd("~/Desktop/SYS3501")
 
 # Define the data folder path
-data_folder <- "~/Desktop/SYS Prog/Data/TrainData"
+data_folder <- "~/Desktop/SYS3501/Data/TrainData"
 
 # Verify the working directory and data folder path
 cat("Current working directory:", getwd(), "\n")
@@ -30,7 +30,7 @@ library(dplyr)
 library(readr)
 
 # Get list of all CSV files in the data folder
-csv_files <- list.files(path = "~/Desktop/SYS Prog/Data/TrainData", 
+csv_files <- list.files(path = "~/Desktop/SYS3501/Data/TrainData", 
                         pattern = "*.csv", 
                         full.names = TRUE)
 
