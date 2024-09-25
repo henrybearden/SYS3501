@@ -28,8 +28,8 @@ library(dplyr)
 # 1.1 Set working directory
 #***************************
 
-traindir <- "~/Google Drive/My Drive/UVA/Courses/ProgSIE/Data/TrainData/"
-sourcedir <-"~/Google Drive/My Drive/UVA/Courses/ProgSIE/Code/"
+traindir <- "~/Desktop/SYS3501/Data/TrainData"
+sourcedir <- "~/Desktop/SYS3501/Code"
 
 # set the working directory to traindir
 setwd(traindir)
@@ -56,7 +56,7 @@ summary(accident_data_23) #summary of each column (variable)
 str(accident_data_23) #type of each column (variable) of data
 
 accident_data_23[,1]
-accident_data_23$IYR
+accident_data_23$IYR[]
 
 # To get a summary of a subset of the variables (e.g., "ACCDMG", "TOTKLD", "CARS" ) 
 str(accident_data_23[,c("ACCDMG", "TOTKLD", "CARS", "STATION")])
@@ -181,8 +181,8 @@ max(totacts$ACCDMG)
 
 which(totacts$ACCDMG == max(totacts$ACCDMG))
 
-totacts[49086,]
-totacts[49123,]
+totacts[47908,]
+totacts[47965,]
 
 totacts %>% filter(ACCDMG == max(ACCDMG))
 
