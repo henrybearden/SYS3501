@@ -158,6 +158,55 @@ ggplot(hourly_summary, aes(x = TIMEHR_24, y = total_CASINJ)) +
     x = "Hour (24-hour format)",
     y = "Total CASINJ"
   ) +
-  scale_x_continuous(breaks = seq(0, 23, by = 1)) +  # Set x-axis to show full hours
+  scale_x_continuous(breaks = seq(0, 23, by = 1)) +  # Set x-axis to show hours
   theme_minimal()
 getwd()
+
+# EXTRA CREDIT ASSIGNMENT
+
+# The goal is to gain insights about the correlation between position of the 
+# first car involved (POSITON1) and total accident damage (ACCDMG).
+
+# Total damage (ACCDMG) was plotted against the position of the 
+# first train involved in a given accident, excluding positions greater than 300
+# to improve data clarity and visualization.
+
+# As Demonstrated by the scatter plot, the accidents with higher total damage 
+# consistently have cars first involved earlier on the train. The top 20 most 
+# costly accidents occurred when the first car involved was in the first 
+# 5 cars on the train. 
+
+# Through further analysis of this data, the FRA could develop responses to 
+# this correlation that limit the costly effects of train accidents. 
+# For example, developing improved braking systems and impact bracing 
+# technology could help protect cars at the front of the train by targeting 
+# the potential situations that make them most vulnerable to accidents.
+
+# Load required libraries
+library(ggplot2)
+library(dplyr)
+
+# Assuming 'aggregated_data' contains the relevant columns
+# Convert POSITON1 and ACCDMG to numeric if they are not already
+aggregated_data <- aggregated_data %>%
+  mutate(
+    POSITON1 = as.numeric(POSITON1),
+    ACCDMG = as.numeric(ACCDMG)
+  )
+
+# Filter out rows where POSITON1 is greater than 300
+filtered_data <- aggregated_data %>%
+  filter(POSITON1 <= 300)
+
+# Plot scatter plot of POSITON1 vs ACCDMG
+ggplot(filtered_data, aes(x = POSITON1, y = ACCDMG)) +
+  geom_point(color = "darkred") +
+  labs(
+    title = "Car Position in Train (POSITON1) vs Total Damage (ACCDMG)",
+    x = "Car Position in Train (POSITON1)",
+    y = "Total Damage (ACCDMG)"
+  ) +
+  theme_minimal()
+
+# End of assigment
+
