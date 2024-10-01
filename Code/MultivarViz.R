@@ -38,8 +38,8 @@ library(gplots)
 
 # Set working directory
 
-traindir <- "~/Google Drive/My Drive/UVA/Courses/ProgSIE/Data/TrainData/"
-sourcedir <-"~/Google Drive/My Drive/UVA/Courses/ProgSIE/Code/"
+traindir <- "~/Desktop/SYS3501/Data/TrainData/"
+sourcedir <-"~/Desktop/SYS3501/Code"
 
 # set the working directory to traindir
 setwd(traindir)
