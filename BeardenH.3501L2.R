@@ -136,10 +136,10 @@ ggplot(totacts, aes(x = totacts$Cause)) +
        y = "Frequency") +
   theme_minimal()
 #Q30
-ggplot(totacts, aes(y = log(ACCDMG))) +
+ggplot(totacts, aes(y = ACCDMG)) +
   geom_boxplot() +
-  labs(title = "Box Plot of Log-Transformed ACCDMG",
-       y = "Log(Accident Damage (ACCDMG))") +
+  labs(title = "Box Plot of ACCDMG",
+       y = "Accident Damage (ACCDMG))") +
   theme_minimal()
 
 IQR <- quantile(totacts$ACCDMG, 0.75, na.rm = TRUE) - quantile(totacts$ACCDMG, 0.25, na.rm = TRUE)
