@@ -2,7 +2,6 @@
 setwd("~/Desktop/SYS3501/Data")
 library("ggplot2")
 library("dplyr")
-
 library("tidyverse")
 homes<-read.csv("housing.csv")
 
